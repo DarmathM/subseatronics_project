@@ -549,8 +549,9 @@ h2, h3{
 
 .scene {
   width: 200px;
-  height: 200px;
+  height: 220px;
   perspective: 500px;
+  
 }
 
 /* Cube */
@@ -603,9 +604,7 @@ h2, h3{
 .left   { transform: rotateY(-90deg) translateZ(100px); }
 
 .top    { transform: rotateX(90deg) translateZ(100px); }
-.bottom { 
-    transform: rotateX(-90deg) translateZ(100px);
-    }
+.bottom { transform: rotateX(-90deg) translateZ(100px);}
 
 .carousselBtn{
     display: flex;
@@ -971,6 +970,25 @@ h2, h3{
     }
     .terms-container{
         padding: 30px;
+    }
+    .face {
+        width: 100px;
+        height: 100px;
+    }
+    .front  { transform: translateZ(50px); }
+    .back   { transform: rotateY(180deg) translateZ(50px); }
+
+    .right  { transform: rotateY(90deg) translateZ(50px); }
+    .left   { transform: rotateY(-90deg) translateZ(50px); }
+
+    .top    { transform: rotateX(90deg) translateZ(50px); }
+    .bottom { transform: rotateX(-90deg) translateZ(50px);}
+
+    .cube-para{
+        transform: translateY(-20px);
+    }
+    .cube-para p{
+        font-size: 0.8rem;
     }
 
 }
