@@ -853,7 +853,6 @@ h2, h3{
 .terms-container{
     display: flex;
     flex-direction: column;
-    background-color: red;
     padding: 100px;
     gap:30px;
     background-color: #1C1D1C;
@@ -946,6 +945,9 @@ h2, h3{
     }
     .legal-mention div{
         flex-direction: column;
+    }
+    .terms-container{
+        padding: 30px;
     }
 
 }
