@@ -561,7 +561,27 @@ h2, h3{
   transform-style: preserve-3d;
   transform: rotateX(-30deg) rotateY(30deg);
   position: absolute;
-  animation: cubeAnimation 5s ease infinite alternate;
+  animation: cubeAnimation 10s linear infinite alternate;
+  
+}
+
+.cube-para{
+    perspective: 900px;
+    position: absolute;
+    transform-style:preserve-3d;
+}
+.cube-para p{
+    font-size: 20px;
+    font-family: "Orbitron";
+    transform: translateY(60px) rotateY(90deg) rotateX(30deg);
+    text-shadow:
+        0px 1px 0px #eb0909,
+        0px 2px 0px red,
+        0px 3px 0px red,
+        0px 4px 0px red,
+        0px 5px 0px red,
+        0px 6px 1px rgba(0,0,0,0.1),
+        0px 10px 50px red;
 }
 
 .face {
@@ -574,6 +594,7 @@ h2, h3{
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: 0 0 10px blue, 0 0 40px rgba(10, 40, 236, 0.563);
 }
 .front  { transform: translateZ(100px); }
 .back   { transform: rotateY(180deg) translateZ(100px); }
@@ -582,7 +603,9 @@ h2, h3{
 .left   { transform: rotateY(-90deg) translateZ(100px); }
 
 .top    { transform: rotateX(90deg) translateZ(100px); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); }
+.bottom { 
+    transform: rotateX(-90deg) translateZ(100px);
+    }
 
 .carousselBtn{
     display: flex;
@@ -1021,10 +1044,10 @@ h2, h3{
 
 @keyframes cubeAnimation {
     0%{
-        transform: translateY(0);
+        transform: rotateY(0) rotateX(0);
     }
     100%{
-        transform: translateY(360deg);
+        transform: rotateY(360deg) rotateX(80deg);
     }
     
 }
