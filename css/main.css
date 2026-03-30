@@ -580,9 +580,7 @@ h2, h3{
         0px 2px 0px red,
         0px 3px 0px red,
         0px 4px 0px red,
-        0px 5px 0px red,
-        0px 6px 1px rgba(0,0,0,0.1),
-        0px 10px 50px red;
+        0px 5px 0px red;
 }
 
 .face {
@@ -971,9 +969,11 @@ h2, h3{
     .terms-container{
         padding: 30px;
     }
+   
     .face {
         width: 100px;
         height: 100px;
+        box-shadow: none;
     }
     .front  { transform: translateZ(50px); }
     .back   { transform: rotateY(180deg) translateZ(50px); }
@@ -988,7 +988,7 @@ h2, h3{
         transform: translateY(-20px);
     }
     .cube-para p{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
 }
