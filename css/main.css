@@ -308,7 +308,7 @@ h2, h3{
 
 .service-grid-container .card-services{
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateY(-80px);
     background-color: #1C1D1C;
     border-radius: 3%;
     display: flex;
@@ -332,7 +332,7 @@ h2, h3{
 
 .service-grid-container .card-services.show{
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .card-services:hover{
