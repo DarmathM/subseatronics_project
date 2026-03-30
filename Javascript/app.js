@@ -15,15 +15,28 @@ const operatedVehicle = document.querySelectorAll(".operated-vehicle");
 const expertiseSubsea = document.getElementById("expertise-subsea");
 const cubeDisplayer = document.getElementById("cube-displayer");
 const cube = document.getElementById("cube-scene");
+const pageListener = document.getElementById("page-listener");
 
 const videoURL = "https://www.youtube.com/embed/8eXN4ZEtb9s?autoplay=1";
 
 burger.addEventListener("click", function(){
     links.classList.toggle("open");
-    links.style.animation = "menuAnimation 0.6s ease";
+    links.style.animation = "menuAnimation 0.6s ease-out";
+    
 })
 
+  window.addEventListener("click", (e) => {
+  if (!burger.contains(e.target)) {
+    links.classList.remove("open");
+  }
+});
 
+//Enlève à tout prix la classe au resize.
+window.addEventListener("resize", function(){
+  if(window.innerWidth > 900){
+  links.classList.remove("open");
+}
+})
 
 window.addEventListener("scroll", function(){
     if(window.scrollY > 70){ 

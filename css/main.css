@@ -11,6 +11,7 @@ body{
     background-color: rgba(0, 0, 0, 0.895);
 }
 
+
 a{
     text-decoration: none;
     color: inherit;
@@ -35,13 +36,14 @@ h2, h3{
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
 #nav-bar{
     width: 100%;
     height: 100px;
     position: sticky;
     top: 0;
     display: flex;
-    z-index: 999;
+    z-index: 99;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -76,14 +78,15 @@ h2, h3{
     z-index: 99;
     align-items: center;
     margin-right: 230px;
-    
+    transition: all 0.4s ease;
 }
+
 .link-wrapper ul{
     display: flex;
     list-style-type: none;
-    gap:5px;
-    
+    gap:5px;  
 }
+
 .link-wrapper ul li{
     padding:10px;
     font-weight: 900;
@@ -96,14 +99,16 @@ h2, h3{
 
 .link-wrapper.open{
         display: flex;
+        opacity: 1;
         margin: 0;
         position: absolute;
         right: 0;
         top:100%;
         background: linear-gradient(145deg, rgb(0, 6, 7), rgb(0, 21, 33));
         border: 1px solid rgba(0, 29, 60, 0.566);
-        
-    }
+        transition: all 0.4s ease;
+        }
+
 .link-wrapper.open ul{
         flex-direction: column;
         width: 50vw;
