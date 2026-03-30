@@ -13,6 +13,8 @@ const track = document.querySelector(".clients-container");
 const cardServices = document.querySelectorAll(".card-services");
 const operatedVehicle = document.querySelectorAll(".operated-vehicle");
 const expertiseSubsea = document.getElementById("expertise-subsea");
+const cubeDisplayer = document.getElementById("cube-displayer");
+const cube = document.getElementById("cube-scene");
 
 const videoURL = "https://www.youtube.com/embed/8eXN4ZEtb9s?autoplay=1";
 
@@ -95,7 +97,7 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
-    else if(!entry.isIntersecting){
+    else {
       entry.target.classList.remove("show");
     }
   });
@@ -106,3 +108,14 @@ const observer = new IntersectionObserver((entries) => {
 cardServices.forEach(el => observer.observe(el));
 operatedVehicle.forEach(el => observer.observe(el));
 observer.observe(expertiseSubsea);
+
+
+
+cubeDisplayer.addEventListener("change", function(){
+  if(cubeDisplayer.checked){
+  cube.classList.add("hide");
+  }else if(!cubeDisplayer.checked){
+  cube.classList.remove("hide");
+  }
+
+})

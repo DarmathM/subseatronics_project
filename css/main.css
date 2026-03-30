@@ -269,6 +269,49 @@ h2, h3{
     align-items: center;
     gap:20px;
 }
+
+.section-header .switch{
+    display: flex;
+    position: relative;
+    margin: 30px 0;
+    width: 200px;
+    justify-content: center;
+}
+
+.switch input[type="checkbox"]{
+    opacity: 0;
+}
+
+.switch span{
+    background-color: rgba(255, 0, 0, 0.795);
+    width: 90px;
+    height: 35px;
+    position: absolute;
+    border-radius: 10px;  
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px red;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  background-color: rgba(255, 255, 255, 0.832);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.switch input:checked + .slider::before{
+    right: 0;
+}
+
+.switch input:checked + span{
+    background-color: rgba(0, 191, 0, 0.747);
+    box-shadow: 0 0 20px rgba(1, 187, 1, 0.689);
+}
+
 .section-title{
     font-family: "Architects Daughter";
     font-size: 25px;
@@ -552,6 +595,10 @@ h2, h3{
   height: 220px;
   perspective: 500px;
   
+}
+
+.scene.hide{
+    display: none;
 }
 
 /* Cube */
