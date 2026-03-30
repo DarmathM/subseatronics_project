@@ -38,7 +38,7 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
 const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
   method: 'POST',
   body: new URLSearchParams({
-    secret: '0x4AAAAAACx7tI4NK-JGR3xUnlT74yOre9M',
+    secret: '0x4AAAAAACx8w0sAoiVSQ_6SHpPMfF3KLFI',
     response: token
   })
 });
