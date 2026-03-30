@@ -11,6 +11,7 @@ const comments = document.querySelectorAll(".comments");
 const cards = document.querySelectorAll(".client-card");
 const track = document.querySelector(".clients-container");
 const cardServices = document.querySelectorAll(".card-services");
+const operatedVehicle = document.querySelectorAll(".operated-vehicle");
 const expertiseSubsea = document.getElementById("expertise-subsea");
 
 const videoURL = "https://www.youtube.com/embed/8eXN4ZEtb9s?autoplay=1";
@@ -103,4 +104,5 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 cardServices.forEach(el => observer.observe(el));
+operatedVehicle.forEach(el => observer.observe(el));
 observer.observe(expertiseSubsea);

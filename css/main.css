@@ -412,7 +412,8 @@ h2, h3{
     transform: translateY(200px);
     transition: all 1s ease;
 }
-.operated-vehicle, .expertise-subsea.show{
+
+.operated-vehicle.show, .expertise-subsea.show{
     transform: translateY(0);
     opacity: 1;
 }
@@ -449,8 +450,9 @@ h2, h3{
 
 .YouTubePopUp-Wrap{
     position: fixed;
+    right: 0;
     top:0;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(0,0,0,0.8);
     width: 100vw;
     height: 100vh;
@@ -458,12 +460,14 @@ h2, h3{
     justify-content: center;
     align-items: center;
 }
+
 .YouTubePopUp-Wrap.open{
     display: flex;
 }
 
 .YouTubePopUp-Content{
     position: relative;
+    z-index: 99;
 }
 .YouTubePopUp-Content .YouTubePopUp-Close{
     width: 40px;
@@ -490,6 +494,7 @@ h2, h3{
 }
 
 .YouTubePopUp-Content iframe{
+    z-index: 99;
     width: 900px;
     height: 500px;
     border: none;
@@ -563,10 +568,8 @@ h2, h3{
   position: absolute;
   width: 200px;
   height: 200px;
-
   background: rgba(0, 150, 255, 0.2);
   border: 1px solid #00c6ff;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -755,7 +758,7 @@ h2, h3{
 }
 
 .cookie-banner.show {
-    display: flex; /* ✅ affiche la bannière */
+    display: flex; 
     justify-content: center;
 }
 
@@ -821,7 +824,7 @@ h2, h3{
 .hero{
     height: 450px;
     background-attachment: fixed;
-    background-image: url(/img/office.jpg);
+    background-image: url(img/office.jpg);
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
