@@ -847,7 +847,7 @@ h2, h3{
 .hero{
     height: 450px;
     background-attachment: fixed;
-    background-image: url("/img/office.jpg");
+    background-image: url("../img/office.jpg");
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
