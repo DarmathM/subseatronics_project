@@ -6,8 +6,6 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
     '[name="cf-turnstile-response"]'
   ).value; //recup token captcha
 
-  console.log(token);
-
   const data = {
     name: form.name.value,
     email: form.email.value,
