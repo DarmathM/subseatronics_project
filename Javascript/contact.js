@@ -14,6 +14,8 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
     message: form.message.value
   };
 
+  console.log(data);
+
 
 
 
@@ -23,7 +25,7 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ data, "cf-turnstile-response": token })
+      body: JSON.stringify({data, "cf-turnstile-response": token })
     });
 
     const result = await res.json();
