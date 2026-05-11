@@ -6,17 +6,12 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
     '[name="cf-turnstile-response"]'
   ).value; //recup token captcha
 
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    subject: form.subject.value,
-    message: form.message.value
-  };
 
-  console.log(data);
-
-
+  const name = form.name.value;
+  const email = form.email.value;
+  const phone = form.phone.value;
+  const subject = form.subject.value;
+  const message = form.message.value;
 
 
   try {
@@ -25,7 +20,7 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({data, "cf-turnstile-response": token })
+      body: JSON.stringify({ name, email, phone, subject, message, "cf-turnstile-response": token })
     });
 
     const result = await res.json();
