@@ -11,13 +11,16 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
     message: form.message.value
   };
 
+
+  
+
   try {
     const res = await fetch("https://darrennode-1.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify({ data, "cf-turnstile-response": token })
     });
 
     const result = await res.json();
@@ -36,10 +39,4 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
 });
 
 
-const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-  method: 'POST',
-  body: new URLSearchParams({
-    secret: '0x4AAAAAACx8w0sAoiVSQ_6SHpPMfF3KLFI',
-    response: token
-  })
-});
+
