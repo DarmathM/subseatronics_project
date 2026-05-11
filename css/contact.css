@@ -1,3 +1,4 @@
+@import url("/css/main.css");
 
 
 #tsparticles {
@@ -11,7 +12,7 @@
 }
 
 p{
-  color: #CCCCCC;
+  color: var(--text);
 }
 .main-container{
     
