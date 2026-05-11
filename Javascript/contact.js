@@ -2,6 +2,11 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
+  const token = document.querySelector(
+    '[name="cf-turnstile-response"]'
+  ).value; //recup token captcha
+
+  console.log(token);
 
   const data = {
     name: form.name.value,
@@ -12,7 +17,7 @@ document.querySelector(".card").addEventListener("submit", async (e) => {
   };
 
 
-  
+
 
   try {
     const res = await fetch("https://darrennode-1.onrender.com/contact", {
