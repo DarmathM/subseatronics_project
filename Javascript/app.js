@@ -46,16 +46,16 @@ window.addEventListener("scroll", function(){
     }
 });
 
-playBtn.addEventListener("click", function(){
+playBtn.addEventListener("click", () =>{
     ytnWrap.classList.add("open");
     iframe.src = videoURL;
 })
 
-ytnWrap.addEventListener("click", function(){
+ytnWrap.addEventListener("click", () =>{
     classRemover();
     iframe.src = "";
 })
-ytClose.addEventListener("click", function(){
+ytClose.addEventListener("click", () =>{
     classRemover();
     iframe.src = "";
 })
