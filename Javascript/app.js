@@ -1,6 +1,6 @@
 const burger = document.getElementById("burger-menu");
 const links = document.getElementById("links");
-const nav = document.getElementById("nav-bar"); 
+const nav = document.getElementById("nav-bar");
 const playBtn = document.getElementById("play-icon");
 const ytnWrap = document.getElementById("youtubeWrap");
 const ytClose = document.getElementById("ytClose");
@@ -14,92 +14,105 @@ const cardServices = document.querySelectorAll(".card-services");
 const operatedVehicle = document.querySelectorAll(".operated-vehicle");
 const expertiseSubsea = document.getElementById("expertise-subsea");
 const pageListener = document.getElementById("page-listener");
+const serviceMenu = document.querySelectorAll(".service-menu a");
 
 const videoURL = "https://www.youtube.com/embed/8eXN4ZEtb9s?autoplay=1";
 
-burger.addEventListener("click", function(){
-    links.classList.toggle("open");
-    links.style.animation = "menuAnimation 0.6s ease-out";
-    
+burger.addEventListener("click", function () {
+  links.classList.toggle("open");
+  links.style.animation = "menuAnimation 0.6s ease-out";
+
 })
 
-  window.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => {
   if (!burger.contains(e.target)) {
     links.classList.remove("open");
   }
 });
 
 //Enlève à tout prix la classe au resize.
-window.addEventListener("resize", function(){
-  if(window.innerWidth > 900){
-  links.classList.remove("open");
-}
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 900) {
+    links.classList.remove("open");
+  }
 })
 
-window.addEventListener("scroll", function(){
-    if(window.scrollY > 70){ 
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 70) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
 });
 
-playBtn.addEventListener("click", () =>{
+if (playBtn) {
+  playBtn.addEventListener("click", () => {
     ytnWrap.classList.add("open");
     iframe.src = videoURL;
-})
+  })
+}
 
-ytnWrap.addEventListener("click", () =>{
+if (ytnWrap) {
+  ytnWrap.addEventListener("click", () => {
     classRemover();
     iframe.src = "";
-})
-ytClose.addEventListener("click", () =>{
+  })
+}
+
+if (ytClose) {
+  ytClose.addEventListener("click", () => {
     classRemover();
     iframe.src = "";
-})
+  })
+}
 
-function classRemover(){
-    ytnWrap.classList.remove("open");
+
+function classRemover() {
+  ytnWrap.classList.remove("open");
 }
 
 dots.forEach(dot => {
-    dot.addEventListener("click",() => {
-        const index = dot.dataset.index;
-        const commentWidth = comments[0].offsetWidth + 25;
-        comContainer.style.transform = `translateX(-${index * commentWidth}px)`;
+  dot.addEventListener("click", () => {
+    const index = dot.dataset.index;
+    const commentWidth = comments[0].offsetWidth + 25;
+    comContainer.style.transform = `translateX(-${index * commentWidth}px)`;
 
-        dots.forEach(d => d.classList.remove("active"));
-        dot.classList.add("active");
-    })
+    dots.forEach(d => d.classList.remove("active"));
+    dot.classList.add("active");
+  })
 });
 
 
-let index = 0;
-const total = cards.length;
-const width = cards[0].offsetWidth + 10; 
+if (cards.length !== 0) {
+  console.log(cards);
+  let index = 0;
+  const total = cards.length;
+  const width = cards[0].offsetWidth + 10;
 
-// DUPLICATION pour l'infini
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  track.appendChild(clone);
-});
+  // DUPLICATION pour l'infini
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
 
-setInterval(() => {
-  index++;
+  setInterval(() => {
+    index++;
 
-  track.style.transition = "transform 0.4s ease";
-  track.style.transform = `translateX(-${index * width}px)`;
+    track.style.transition = "transform 0.4s ease";
+    track.style.transform = `translateX(-${index * width}px)`;
 
-  // reset invisible
-  if (index === total) {
-    setTimeout(() => {
-      track.style.transition = "none";
-      track.style.transform = "translateX(0)";
-      index = 0;
-    }, 400); // doit match le transition
-  }
+    // reset invisible
+    if (index === total) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        index = 0;
+      }, 400); // doit match le transition
+    }
 
-}, 4000);
+  }, 4000);
+}
+
 
 
 //Animation au scroll des sections
@@ -113,10 +126,42 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
+  rootMargin: "100px 0px 0px 0px",
   threshold: 0.4 // déclenche quand 30% visible
 });
 
-cardServices.forEach(el => observer.observe(el));
-operatedVehicle.forEach(el => observer.observe(el));
-observer.observe(expertiseSubsea);
+let activeMenu = null;
+if(serviceMenu.length !== 0){
+
+
+activeMenu = serviceMenu[0];
+activeMenu.classList.add("active");
+//services JS
+serviceMenu.forEach(el => {
+  el.addEventListener("click", (e) => {
+
+    if(activeMenu){
+      activeMenu.classList.remove("active");
+    }
+    el.classList.add("active");
+
+    activeMenu = el;
+
+
+
+  });
+
+});
+}
+
+if (cardServices) {
+  cardServices.forEach(el => observer.observe(el));
+}
+if (operatedVehicle) {
+  operatedVehicle.forEach(el => observer.observe(el));
+}
+if (expertiseSubsea) {
+  observer.observe(expertiseSubsea);
+}
+
 

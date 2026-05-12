@@ -1,47 +1,51 @@
-
-body{
+body {
     padding: 0;
     background: var(--main-bg);
 }
 
-.about-main-container{
+.about-main-container {
     display: flex;
     padding: 50px;
     margin-top: 30px;
-    gap:20px;
-}
-.about-box-1 h1{
-    font-family: "Orbitron";
-    color: var(--text);
-    font-size: 43px;
-    font-weight: bold;
-    animation: paraAnim 2s ease;
-    
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
-.about-box-1 h2{ 
+.about-box-1 h1 {
+    font-family: "Orbitron";
+    color: var(--text);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+    animation: paraAnim 2s ease;
+
+}
+
+.about-box-1 h2 {
     color: var(--muted);
     font-size: 1rem;
     letter-spacing: 2px;
     font-weight: none;
     animation: paraAnim 2s 1s ease forwards;
-    
+
 }
 
-.about-main-container .about-box-1{
+.about-main-container .about-box-1 {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 20px;
 }
-.about-main-container .about-box-1 p.about-hidden{
+
+.about-main-container .about-box-1 p.about-hidden {
     font-size: 20px;
     position: absolute;
     transform: translateY(-20px);
     opacity: 0;
     transition: all 0.6s ease;
 }
-.about-main-container .about-box-1 p.show{
+
+.about-main-container .about-box-1 p.show {
     display: unset;
     position: relative;
     opacity: 1;
@@ -49,11 +53,12 @@ body{
     transition: all 0.6s ease;
 }
 
-.about-box-1 .about-flex{
+.about-box-1 .about-flex {
     display: flex;
-    gap:20px;
+    gap: 20px;
 }
-.about-flex button{
+
+.about-flex button {
     padding: 15px;
     font-family: "Orbitron";
     font-size: 16px;
@@ -69,46 +74,48 @@ body{
     opacity: 0.8;
 
 }
-.about-flex button a{
+
+.about-flex button a {
     text-decoration: none;
     color: inherit;
     font-family: "Orbitron";
 }
 
-.about-flex button:hover{
-   background-position: right;
+.about-flex button:hover {
+    background-position: right;
 }
 
-.about-flex button:nth-child(2):hover{
+.about-flex button:nth-child(2):hover {
     transform: translateX(10px);
 }
-.about-glass-card{
+
+.about-glass-card {
     width: 300px;
     position: relative;
     padding: 20px;
     height: 160px;
     backdrop-filter: blur(15px);
     --webkit-backdrop-filter: blur(15px);
-    background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.2),
-    rgba(255,255,255,0.05)
-  );
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.534),
-    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        0 8px 32px rgba(0, 0, 0, 0.534),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     transform-style: preserve-3d;
     perspective: 1000px;
-    
+
 }
-.about-glass-card ul{
+
+.about-glass-card ul {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 }
-.about-glass-card ul li{
+
+.about-glass-card ul li {
     font-family: "Datatype";
     font-size: 15px;
     color: rgba(200, 230, 255, 0.75);
@@ -119,169 +126,178 @@ body{
 
 }
 
-.about-glass-card ul li::before{
+.about-glass-card ul li::before {
     content: "✔ ";
     color: green;
-    
-    
+
+
 }
 
 
 .profile-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px;
-  border-radius: 20px;
-  background: repeating-linear-gradient( -45deg, hsla(0, 0%, 0%, 0.20) 1%, transparent 5%);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 0 10px rgba(0, 251, 255, 0.15);
-  max-width: 900px;
-  margin: auto;
-  gap: 30px;
-  animation: profileAnim 2s ease forwards;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 20px;
+    background: repeating-linear-gradient(-45deg, hsla(0, 0%, 0%, 0.20) 1%, transparent 5%);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 0 10px rgba(0, 251, 255, 0.15);
+    max-width: 900px;
+    height: 100%;
+    gap: 30px;
+    animation: profileAnim 2s ease forwards;
+    
 }
 
 /* TEXTE */
 .content {
-  flex: 1;
+    flex: 1;
 }
 
 .content h3 {
-  font-size: 28px;
-  margin-bottom: 5px;
-  letter-spacing: 5px;
-  font-family: "Audiowide";
+    font-size: 28px;
+    margin-bottom: 5px;
+    letter-spacing: 5px;
+    font-family: "Audiowide";
 
 }
 
-.content h3::first-letter{
+.content h3::first-letter {
     color: orangered;
     font-weight: bold;
     font-size: 50px;
 }
 
 .role {
-  color: #00d9ff;
-  font-size: 14px;
+    color: #00d9ff;
+    font-size: 14px;
 }
 
 .content p {
-  margin: 15px 0;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.5;
+    margin: 15px 0;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
 }
 
 /* LIEN */
 .learn-more {
-  color: #00d9ff;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: "Orbitron";
+    color: #00d9ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Orbitron";
 }
 
 .learn-more:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* BOUTONS */
 .actions {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .actions button {
-  background: transparent;
-  border: 1px solid rgba(0,255,150,0.3);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: 0.3s;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 150, 0.3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .actions button:hover {
-  background: rgba(0,255,150,0.2);
+    background: rgba(0, 255, 150, 0.2);
 }
 
 /* IMAGE */
 .image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 50%;
-  width: 200px;
-  aspect-ratio: 1;
+    position: absolute;
+    bottom: -20%;
+    right: -5%;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 300px;
+    aspect-ratio: 1;
 }
 
 .image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
 }
 
 /* HOVER GLOBAL */
 .profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0, 255, 229, 0.25);
-  transition:  transform 0.4s, box-shadow 0.4s;
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 255, 229, 0.25);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
-.methodology{
+
+.methodology {
     margin-top: 200px;
 }
-.methodology-container{
+
+.methodology-container {
     display: flex;
-    gap:20px;
+    gap: 20px;
     justify-content: space-around;
 }
 
-.methodology-container .about-glass-card{
+.methodology-container .about-glass-card {
     width: 350px;
     height: unset;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
     line-height: 2;
 }
 
-.method{
+.method {
     opacity: 0;
     transform: translateY(100px);
     transition: all 1s ease;
 }
-.mthod h2{
+
+.mthod h2 {
     font-family: "Audiowide", sans-serif;
 }
-.method.show{
+
+.method.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-footer{
+footer {
     margin-top: 200px;
 }
 
-@keyframes paraAnim{
-    0%{
+@keyframes paraAnim {
+    0% {
         opacity: 0;
         transform: translateX(-200px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-@keyframes profileAnim{
-    0%{
+@keyframes profileAnim {
+    0% {
         opacity: 0;
         transform: translateX(200px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
@@ -289,30 +305,34 @@ footer{
 
 /* Responsive */
 @media (max-width:900px) {
-    .about-main-container{
+    .about-main-container {
         flex-direction: column;
-        gap:50px;
+        gap: 50px;
         padding: 15px;
     }
-    .about-main-container .about-box-1{
+
+    .about-main-container .about-box-1 {
         gap: 35px;
     }
-    
-    .profile-card{
+
+    .profile-card {
         width: 90vw;
         display: flex;
         flex-direction: column;
     }
-    .profile-card .image img{
+
+    .profile-card .image img {
         width: 90%;
-    } 
-    .methodology-container{
+    }
+
+    .methodology-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap:35px;
+        gap: 35px;
     }
-    .methodology-container .about-glass-card{
+
+    .methodology-container .about-glass-card {
         width: 70vw;
     }
 
@@ -323,7 +343,7 @@ footer{
 
 
 @media (max-width: 700px) {
-    .about-main-container .about-flex:has(div){
+    .about-main-container .about-flex:has(div) {
         flex-direction: column;
     }
 }
